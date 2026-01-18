@@ -9,7 +9,10 @@ const UserLayout = () => {
 
       
       {/* Main Content */}
+
+
       {/* Footer */}
+      
     </div>
   );
 };
