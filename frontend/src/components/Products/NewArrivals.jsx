@@ -122,7 +122,7 @@ const NewArrivals = () => {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  const handleMouseUpOrLeave = (e) => {
+  const handleMouseUpOrLeave = () => {
     setIsDragging(false);
   };
 
@@ -147,12 +147,14 @@ const NewArrivals = () => {
     }
 
     if (!container) return;
-    console.log({
-      scrollLeft: container.scrollLeft,
-      clientWidth: container.clientWidth,
-      containerScrollWidth: container.scrollWidth,
-      offsetLeft: scrollRef.current.offsetLeft,
-    });
+
+
+    // console.log({
+    //   scrollLeft: container.scrollLeft,
+    //   clientWidth: container.clientWidth,
+    //   containerScrollWidth: container.scrollWidth,
+    //   offsetLeft: scrollRef.current.offsetLeft,
+    // });
   };
 
   useEffect(() => {
