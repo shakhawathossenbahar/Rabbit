@@ -27,9 +27,9 @@ const ProductDetails = () => {
         <div className="flex flex-col md:flex-row">
           {/* LEFT THUMBNAILS */}
           <div className="hidden md:flex flex-col space-y-4 mr-6">
-            {selectedProduct.images.map((image, index) => {
-              <img key={index} src={image.url} alt={image.altText} />;
-            })}
+            {selectedProduct.images.map((image, index) => (
+              <img key={index} src={image.url} alt={image.altText} />
+            ))}
           </div>
         </div>
       </div>
