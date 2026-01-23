@@ -21,6 +21,7 @@ const ProductDetails = () => {
       },
     ],
   };
+
   return (
     <div className="p-6">
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
@@ -28,9 +29,42 @@ const ProductDetails = () => {
           {/* LEFT THUMBNAILS */}
           <div className="hidden md:flex flex-col space-y-4 mr-6">
             {selectedProduct.images.map((image, index) => (
-              <img key={index} src={image.url} alt={image.altText} />
+              <img
+                key={index}
+                src={image.url}
+                alt={image.altText}
+                className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                draggable="false"
+              />
             ))}
           </div>
+
+          {/* MAIN IMAGE */}
+          <div className="md:w-1/2">
+            <div className="mb-4">
+              <img
+                src={selectedProduct.images[0].url}
+                alt="Main Product"
+                className="w-full h-auto object-cover rounded-lg"
+              />
+            </div>
+          </div>
+
+          {/* MOBILE THUBNAIL */}
+          <div className="md:hidden flex overscroll-x-scroll space-x-4 mb-4">
+            {selectedProduct.images.map((image, index) => (
+              <img
+                key={index}
+                src={image.url}
+                alt={image.altText}
+                className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                draggable="false"
+              />
+            ))}
+          </div>
+
+          {/* RIGHT SIDE */}
+          
         </div>
       </div>
     </div>

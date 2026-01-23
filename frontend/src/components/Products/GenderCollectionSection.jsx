@@ -12,6 +12,7 @@ const GenderCollectionSection = () => {
             src={womensCollectionImage}
             alt="Women's Collection"
             className="w-full h-175 object-cover"
+            draggable="false"
           />
           <div className="absolute bottom-8 left-8 bg-white/90 p-4">
             <h2 className="text-2xl font-bold text-gray-900 mb-3">
@@ -32,6 +33,7 @@ const GenderCollectionSection = () => {
             src={mensCollectionImage}
             alt="Men's Collection"
             className="w-full h-175 object-cover"
+            draggable="false"
           />
           <div className="absolute bottom-8 left-8 bg-white/90 p-4">
             <h2 className="text-2xl font-bold text-gray-900 mb-3">
