@@ -25,6 +25,7 @@ const CartContents = () => {
   ];
   return (
     <div>
+      {/* Showing cart products */}
       {cartProducts.map((product, index) => (
         <div
           key={index}
