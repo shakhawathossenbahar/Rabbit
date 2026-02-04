@@ -22,6 +22,7 @@ const ProductDetails = () => {
     ],
   };
 
+  // Setting main image on the component
   const [mainImage, setMainImage] = useState(
     selectedProduct.images[0]?.url || "",
   );
