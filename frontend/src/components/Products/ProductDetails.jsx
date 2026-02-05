@@ -27,6 +27,8 @@ const ProductDetails = () => {
     selectedProduct.images[0]?.url || "",
   );
 
+  // adding some state
+
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [quantity, setQuantity] = useState(1);
