@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const ProductDetails = () => {
   const selectedProduct = {
@@ -44,6 +45,24 @@ const ProductDetails = () => {
   //     setMainImage(selectedProduct.images[0].url);
   //   }
   // }, [setMainImage]);
+
+  const handleAddToCart = () => {
+    if (!selectedSize || !selectedColor) {
+      toast.error("Please select a size and color before adding to cart!", {
+        duration: 1000,
+      });
+      return;
+    }
+
+    setIsButtonDisabled(true);
+
+    setTimeout(() => {
+      toast.success("Product added to cart!", {
+        duration: 1000,
+      });
+      setIsButtonDisabled(true);
+    }, 500)
+  };
 
   return (
     <div className="p-6">
@@ -155,7 +174,10 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <button className="bg-black text-white py-2 px-6 rounded w-full mb-4">
+            <button
+              onClick={handleAddToCart}
+              className="bg-black text-white py-2 px-6 rounded w-full mb-4"
+            >
               ADD TO CART
             </button>
 
