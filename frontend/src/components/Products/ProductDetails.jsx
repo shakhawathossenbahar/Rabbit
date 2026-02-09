@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
+import ProductGrid from "./ProductGrid";
 
 const ProductDetails = () => {
   const selectedProduct = {
@@ -23,13 +24,42 @@ const ProductDetails = () => {
     ],
   };
 
+  const similarProducts = [
+    {
+      _id: 3,
+      name: "Product 3",
+      price: 100,
+      images: [{ url: "http://picsum.photos/500/500?random=3" }],
+    },
+
+    {
+      _id: 4,
+      name: "Product 4",
+      price: 100,
+      images: [{ url: "http://picsum.photos/500/500?random=4" }],
+    },
+
+    {
+      _id: 5,
+      name: "Product 5",
+      price: 100,
+      images: [{ url: "http://picsum.photos/500/500?random=5" }],
+    },
+
+    {
+      _id: 6,
+      name: "Product 6",
+      price: 100,
+      images: [{ url: "http://picsum.photos/500/500?random=6" }],
+    },
+  ];
+
   // Setting main image on the component
   const [mainImage, setMainImage] = useState(
     selectedProduct.images[0]?.url || "",
   );
 
   // adding some state
-
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -60,8 +90,8 @@ const ProductDetails = () => {
       toast.success("Product added to cart!", {
         duration: 1000,
       });
-      setIsButtonDisabled(true);
-    }, 500)
+      setIsButtonDisabled(false);
+    }, 500);
   };
 
   return (
@@ -176,9 +206,14 @@ const ProductDetails = () => {
 
             <button
               onClick={handleAddToCart}
-              className="bg-black text-white py-2 px-6 rounded w-full mb-4"
+              disabled={isButtonDisabled}
+              className={`bg-black text-white py-2 px-6 rounded w-full mb-4 ${
+                isButtonDisabled
+                  ? "cursor-not-allowed opacity-50"
+                  : "hover:bg-gray-900"
+              }`}
             >
-              ADD TO CART
+              {isButtonDisabled ? "Adding..." : "ADD TO CART"}
             </button>
 
             <div className="mt-10 text-gray-700">
@@ -197,6 +232,13 @@ const ProductDetails = () => {
               </table>
             </div>
           </div>
+        </div>
+
+        <div className="mt-20">
+          <h2 className="text-2xl text-center font-medium mb-4">
+            You May Also Like
+          </h2>
+          <ProductGrid similarProducts={similarProducts}></ProductGrid>
         </div>
       </div>
     </div>
