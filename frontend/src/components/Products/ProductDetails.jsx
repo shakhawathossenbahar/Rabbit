@@ -46,7 +46,6 @@ const ProductDetails = () => {
   //   }
   // }, [setMainImage]);
 
-  // function for adding to cart
   const handleAddToCart = () => {
     if (!selectedSize || !selectedColor) {
       toast.error("Please select a size and color before adding to cart!", {
