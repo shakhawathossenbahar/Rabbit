@@ -3,6 +3,8 @@ import { toast } from "sonner";
 import ProductGrid from "./ProductGrid";
 
 const ProductDetails = () => {
+
+  // adding a comment
   const selectedProduct = {
     name: "Stylish Jacket",
     price: 123,
