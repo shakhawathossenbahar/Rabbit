@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "sonner";
 import ProductGrid from "./ProductGrid";
 
 const ProductDetails = () => {
-
   // adding a comment
   const selectedProduct = {
     name: "Stylish Jacket",
@@ -71,12 +70,6 @@ const ProductDetails = () => {
     if (action === "plus") setQuantity((prev) => prev + 1);
     if (action === "minus" && quantity > 1) setQuantity((prev) => prev - 1);
   };
-
-  // useEffect(() => {
-  //   if (selectedProduct?.images?.length > 0) {
-  //     setMainImage(selectedProduct.images[0].url);
-  //   }
-  // }, [setMainImage]);
 
   const handleAddToCart = () => {
     if (!selectedSize || !selectedColor) {
@@ -240,7 +233,7 @@ const ProductDetails = () => {
           <h2 className="text-2xl text-center font-medium mb-4">
             You May Also Like
           </h2>
-          <ProductGrid similarProducts={similarProducts}></ProductGrid>
+          <ProductGrid products={similarProducts}></ProductGrid>
         </div>
       </div>
     </div>
