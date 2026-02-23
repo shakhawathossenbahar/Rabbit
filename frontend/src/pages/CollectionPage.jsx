@@ -24,8 +24,10 @@ const CollectionPage = () => {
     // Add event listener for clikcs
     document.addEventListener("mousedown", handleClicksOutside);
 
-    // Clean event listener
-    document.removeEventListener("mousedown", handleClicksOutside);
+    return () => {
+      // Clean event listener
+      document.removeEventListener("mousedown", handleClicksOutside);
+    };
   }, []);
 
   useEffect(() => {
@@ -108,12 +110,12 @@ const CollectionPage = () => {
       >
         <FilterSidebar />
       </div>
-      
+
       <div className="grow p-4">
         <h2 className="text-2xl uppercase mb-4">All Collection</h2>
 
         {/* Sort Option */}
-        <SortOptions/>
+        <SortOptions />
 
         {/* Product Grid */}
         <ProductGrid products={products} />
