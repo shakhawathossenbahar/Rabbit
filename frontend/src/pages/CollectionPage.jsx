@@ -13,6 +13,8 @@ const CollectionPage = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+
+  // toggling filter button
   const handleClicksOutside = (e) => {
     // Close sidebar if cliked outside
     if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
