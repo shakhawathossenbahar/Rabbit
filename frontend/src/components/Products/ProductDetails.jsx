@@ -71,6 +71,8 @@ const ProductDetails = () => {
     if (action === "minus" && quantity > 1) setQuantity((prev) => prev - 1);
   };
 
+  // function for adding to cart
+
   const handleAddToCart = () => {
     if (!selectedSize || !selectedColor) {
       toast.error("Please select a size and color before adding to cart!", {
