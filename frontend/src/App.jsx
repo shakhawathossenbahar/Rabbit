@@ -12,6 +12,8 @@ import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import MyOrdersPage from "./pages/MyOrdersPage";
 import AdminLayout from "./components/Admin/AdminLayout";
+import AdminHomePage from "./pages/AdminHomePage";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -32,10 +34,13 @@ const App = () => {
             element={<OrderConfirmationPage />}
           />
           <Route path="order/:id" element={<OrderDetailsPage />} />
-          <Route path="/my-orders" element={<MyOrdersPage />} />
+          <Route path="my-orders" element={<MyOrdersPage />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
 
-        <Route path="/admin" element={<AdminLayout />}></Route>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminHomePage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
