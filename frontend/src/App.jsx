@@ -35,12 +35,13 @@ const App = () => {
           />
           <Route path="order/:id" element={<OrderDetailsPage />} />
           <Route path="my-orders" element={<MyOrdersPage />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHomePage />} />
         </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
