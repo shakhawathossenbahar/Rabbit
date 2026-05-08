@@ -7,7 +7,8 @@ const connectDB = async () => {
   }
 
   catch (err) {
-    console.error("MonogDB connection failed", err);
+    console.error("MonogDB connection failed", err.message);
+    process.exit(1); // stop server if DB fails
   }
 }
 
